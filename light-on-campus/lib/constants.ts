@@ -1,0 +1,71 @@
+import type { NavItem, DetailCard, ExpectCard, SocialLink } from "./types";
+
+export const NAV_ITEMS: NavItem[] = [
+  { label: "Details", href: "#details" },
+  { label: "Programme", href: "#expect" },
+  { label: "Watch", href: "#video" },
+  { label: "Register", href: "#register" },
+];
+
+export const DETAIL_CARDS: DetailCard[] = [
+  {
+    label: "Date",
+    value: "Saturday, 1 August 2026",
+    sub: "One unforgettable day",
+    icon: "calendar",
+  },
+  {
+    label: "Time",
+    value: "08:00 AM – 03:00 PM",
+    sub: "Full day programme",
+    icon: "clock",
+  },
+  {
+    label: "Venue",
+    value: "New Life Embassy Auditorium",
+    sub: "Pretoria · Free entry",
+    icon: "location",
+  },
+];
+
+export const EXPECT_CARDS: ExpectCard[] = [
+  {
+    num: "01",
+    title: "Inspiring Word & Worship",
+    desc: "Powerful messages and vibrant worship sessions crafted for the campus generation.",
+  },
+  {
+    num: "02",
+    title: "Real Conversations About Faith",
+    desc: "Honest, relevant discussions on navigating faith and identity in today's campus culture.",
+  },
+  {
+    num: "03",
+    title: "Connect With Other Students",
+    desc: "Build lasting friendships with like-minded students from campuses across the region.",
+  },
+  {
+    num: "04",
+    title: "Purpose, Identity & Growth",
+    desc: "Practical sessions to help you discover your calling and walk in it with confidence.",
+  },
+];
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  { label: "Instagram", href: "https://instagram.com/lightoncampus" },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/Light_On_Campus_Ministry",
+  },
+  { label: "TikTok", href: "https://tiktok.com/@nlelightoncampus" },
+];
+
+export const CONTACT = {
+  phone: "074 566 3399",
+  phoneTel: "0745663399",
+  whatsapp: "https://wa.me/27745663399",
+  email: "inspire@lightoncampus.com",
+};
+
+export const YOUTUBE_EMBED_ID = "DSoPU0YkwfA";
+export const REGISTER_FORM_URL = "https://forms.gle/LightOnCampusRegister";
