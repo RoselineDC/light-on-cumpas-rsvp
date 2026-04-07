@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/ui/FadeIn";
-import { CalendarIcon, ClockIcon, LocationIcon } from "@/components/ui/Icons";
+import { CalendarIcon, ClockIcon, LocationIcon, TransportationIcon} from "@/components/ui/Icons";
 import { DETAIL_CARDS } from "@/lib/constants";
 import type { DetailCard } from "@/lib/types";
 import type { SVGProps } from "react";
@@ -11,6 +11,8 @@ const ICON_MAP: Record<
   calendar: CalendarIcon,
   clock: ClockIcon,
   location: LocationIcon,
+  transportation: TransportationIcon,
+ 
 };
 
 export function Details() {

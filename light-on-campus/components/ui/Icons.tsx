@@ -39,6 +39,24 @@ export function LocationIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+export function TransportationIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      {/* Bus body */}
+      <rect x="3" y="5" width="18" height="11" rx="2" ry="2" />
+
+      {/* Windows */}
+      <line x1="3" y1="10" x2="21" y2="10" />
+
+      {/* Wheels */}
+      <circle cx="7" cy="17" r="2" />
+      <circle cx="17" cy="17" r="2" />
+
+      {/* Door */}
+      <line x1="15" y1="5" x2="15" y2="16" />
+    </svg>
+  );
+}
 
 export function QRIcon(props: SVGProps<SVGSVGElement>) {
   return (

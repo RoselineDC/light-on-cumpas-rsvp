@@ -26,6 +26,12 @@ export const DETAIL_CARDS: DetailCard[] = [
     sub: "Pretoria · Free entry",
     icon: "location",
   },
+  {
+    label: "Transportation",
+    value: "Transport provided",
+    sub: "From key campuses in Gauteng",
+    icon: "transportation",
+  },
 ];
 
 export const EXPECT_CARDS: ExpectCard[] = [
@@ -52,19 +58,25 @@ export const EXPECT_CARDS: ExpectCard[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "Instagram", href: "https://instagram.com/lightoncampus" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/lightoncampusministry?igsh=azdzN2hwZnhuNzFw",
+  },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/Light_On_Campus_Ministry",
+    href: "https://www.facebook.com/profile.php?id=100084610977889",
   },
-  { label: "TikTok", href: "https://tiktok.com/@nlelightoncampus" },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@nlelightoncampus?_t=ZS-8xqqjKeZUQc&_r=1 ",
+  },
 ];
 
 export const CONTACT = {
-  phone: "074 566 3399",
+  phone: "061 435 8998",
   phoneTel: "0745663399",
-  whatsapp: "https://wa.me/27745663399",
-  email: "inspire@lightoncampus.com",
+  whatsapp: "https://wa.me/27614358998",
+  email: "Email connect@lightoncampus.com",
 };
 
 export const YOUTUBE_EMBED_ID = "DSoPU0YkwfA";

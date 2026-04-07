@@ -52,6 +52,7 @@ body {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
+  width: 100%;
   overflow: hidden;
   border-radius: 18px;
   border: 2px solid rgba(255, 255, 255, 0.1);

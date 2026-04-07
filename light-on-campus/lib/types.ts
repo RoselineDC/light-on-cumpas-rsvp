@@ -7,7 +7,7 @@ export interface DetailCard {
   label: string;
   value: string;
   sub: string;
-  icon: "calendar" | "clock" | "location";
+  icon: "calendar" | "clock" | "location" | "transportation";
 }
 
 export interface ExpectCard {
