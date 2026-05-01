@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, DM_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
 import "./globals.css";
-
 
 const sora = Sora({
   subsets: ["latin"],
@@ -19,26 +19,31 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-   icons: {
-    icon: '/favicon.ico',
+  icons: {
+    icon: "/favicon.ico",
   },
   title: "Light on Campus — Igniting Purpose",
   description:
-    "Christian Student Conference · 1 August 2026 · New Life Embassy Auditorium, Pretoria. Free entry. Be the light of the world.",
-  openGraph: {
-    title: "Light on Campus — Igniting Purpose",
-    description:
-      "Join us for a full day of worship, word, and community. 1 August 2026 · Pretoria · Free entry.",
-    type: "website",
-  },
+    "Christian Student Conference · 1 August 2026 · New Life Embassy Auditorium, Pretoria. Free entry.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${sora.variable} ${dmSans.variable}`}>
-      <body className="bg-[#f8fafb] text-[#0d1b2a] antialiased">{children}</body>
+    <html
+      lang="en"
+      className={cn(
+        sora.variable,
+        dmSans.variable,
+        "font-sans"
+      )}
+    >
+      <body className="antialiased">
+        {children}
+      </body>
     </html>
   );
 }

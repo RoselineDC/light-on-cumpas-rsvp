@@ -12,6 +12,23 @@ const config: Config = {
         dm: ["var(--font-dm-sans)", "sans-serif"],
       },
       colors: {
+        // ✅ REQUIRED for shadcn
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+
+        // ✅ your brand colors
         teal: {
           DEFAULT: "#0f9e8e",
           dark: "#0b7a6d",
