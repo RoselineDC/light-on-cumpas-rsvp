@@ -6,7 +6,7 @@ import { REGISTER_FORM_URL } from "@/lib/constants";
 export function Register() {
   return (
     <section id="register" className="bg-white py-20 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-8xl mx-auto py-10 px-20">
         <FadeIn>
           <div
             className="relative overflow-hidden rounded-[28px] border-2 border-gold/20 p-14 text-center"
