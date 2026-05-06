@@ -1,6 +1,14 @@
+'use client';
+
 import Link from "next/link";
+import { useState } from "react";
+import { RegistrationModal } from "./RegistrationModal";
 
 export function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-24 text-center"
@@ -69,14 +77,15 @@ export function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-4 justify-center flex-wrap">
-          <Link
-            href="#register"
-            className="no-underline inline-block bg-gold text-navy font-sora font-bold text-base px-10 py-4 rounded-full hover:-translate-y-1 hover:shadow-xl transition-all"
-            style={{ boxShadow: "0 6px 24px rgba(245,166,35,0.35)" }}
-          >
-            Register Free
-          </Link>
+        <div className="flex gap-6 justify-center flex-wrap">
+          <button
+        onClick={openModal} // Change Link to button and add onClick handler
+ className="no-underline inline-block bg-gold text-navy font-sora font-bold text-base px-10 py-4 rounded-full hover:-translate-y-1 hover:shadow-xl transition-all"
+            style={{ boxShadow: "0 6px 24px rgba(245,166,35,0.35)" }}      >
+        Register Now
+      </button>
+            <RegistrationModal isOpen={isModalOpen} onClose={closeModal} />
+      
           <Link
             href="#video"
             className="no-underline inline-block border-2 border-white/50 text-white font-sora font-semibold text-base px-10 py-4 rounded-full hover:border-white hover:bg-white/10 transition-all"

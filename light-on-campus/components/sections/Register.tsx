@@ -1,9 +1,39 @@
-import Link from "next/link";
-import { FadeIn } from "@/components/ui/FadeIn";
-import { QRIcon } from "@/components/ui/Icons";
-import { REGISTER_FORM_URL } from "@/lib/constants";
+'use client';
+import { useState } from 'react';
+import { FadeIn } from '@/components/ui/FadeIn';
+import { RegistrationForm } from './RegistrationForm'; // Import the new form component
 
 export function Register() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (formData: any) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Something went wrong');
+      }
+
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || 'An unexpected error occurred.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="register" className="bg-white py-20 px-4">
       <div className="max-w-8xl mx-auto py-10 px-20">
@@ -42,29 +72,16 @@ export function Register() {
               free and open to all campus students.
             </p>
 
-            <div className="flex gap-6 justify-center items-center flex-wrap">
-              <Link
-                href={REGISTER_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="no-underline inline-block bg-gold text-navy font-sora font-bold text-[1.05rem] px-11 py-4 rounded-full hover:-translate-y-1 transition-all"
-                style={{ boxShadow: "0 6px 24px rgba(245,166,35,0.35)" }}
-              >
-                Register Now — It&apos;s Free
-              </Link>
-
-              {/* QR placeholder */}
-              <div className="w-[100px] h-[100px] rounded-[10px] border-2 border-dashed border-gold/40 flex flex-col items-center justify-center gap-1 text-gold">
-                <QRIcon />
-                <span className="text-[0.7rem] font-semibold uppercase tracking-widest">
-                  QR Code
-                </span>
+            {isSubmitted ? (
+              <div className="text-center text-green-600 font-bold text-xl">
+                Thank you for registering! We look forward to seeing you.
               </div>
-            </div>
+            ) : (
+              <RegistrationForm onSubmit={handleSubmit} isLoading={isLoading} error={error} />
+            )}
 
             <p className="text-[0.82rem] text-[#7a96ab] mt-6">
-              Registration responses are collected via Google Forms · Seats are
-              limited
+              Seats are limited.
             </p>
           </div>
         </FadeIn>
