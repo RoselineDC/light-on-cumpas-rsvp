@@ -1,5 +1,4 @@
 import { FadeIn } from "@/components/ui/FadeIn";
-import { YOUTUBE_EMBED_ID } from "@/lib/constants";
 
 export function VideoSection() {
   return (

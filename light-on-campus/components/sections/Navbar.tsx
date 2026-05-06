@@ -8,8 +8,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { RegistrationModal } from "./RegistrationModal";
 
-import loc from "@public/loc.png";
-
 export function Navbar() {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
