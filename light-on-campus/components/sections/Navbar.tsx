@@ -16,7 +16,7 @@ export function Navbar() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/85 backdrop-blur-xl border-b border-teal/10">
+    <nav className="fixed top-0 left-0 right-0 z-[9999] flex items-center justify-between px-6 py-4 bg-white/85 backdrop-blur-xl border-b border-teal/10">
       {/* Logo */}
       <div className="font-sora font-bold text-[1.05rem] text-dark tracking-tight"
        onClick={() => router.push('/')}

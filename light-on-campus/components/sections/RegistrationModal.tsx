@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { RegistrationForm } from './RegistrationForm';
 
 interface RegistrationModalProps {
@@ -13,6 +14,11 @@ export function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [countdown, setCountdown] = useState(3);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!isSubmitted) return;
@@ -57,10 +63,10 @@ export function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
     }
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
-    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex items-start justify-center overflow-y-auto p-4 sm:p-8">
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] bg-black bg-opacity-50 flex items-start justify-center overflow-y-auto p-4 sm:p-8">
       <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full p-6 my-auto">
         <button
           onClick={onClose}
@@ -90,6 +96,7 @@ export function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
           <RegistrationForm onSubmit={handleSubmit} isLoading={isLoading} error={error} />
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
