@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="w-full max-w-screen-2xl mx-auto px-4">
         <Hero />
         <Details />
         <Expect />

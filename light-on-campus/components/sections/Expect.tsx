@@ -4,7 +4,7 @@ import { EXPECT_CARDS } from "@/lib/constants";
 export function Expect() {
   return (
     <section id="expect" className="bg-[#f8fafb] py-20 px-4">
-      <div className="max-w-8xl mx-auto py-10 px-20">
+      <div className="w-full max-w-screen-2xl mx-auto px-4">
         <span className="inline-block bg-teal-light text-teal-dark text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
           Programme
         </span>
