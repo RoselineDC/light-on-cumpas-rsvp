@@ -39,8 +39,7 @@ export function Register() {
       <div className="w-full max-w-screen-2xl mx-auto px-4">
         <FadeIn>
           <div
-            className="relative overflow-hidden rounded-[28px] border-2 border-gold/20 p-14 text-center"
-            style={{
+            className="relative overflow-hidden rounded-[28px] border-2 border-gold/20 p-6 sm:p-14 text-center" style={{
               background:
                 "linear-gradient(135deg, #fff8ed 0%, #ffffff 60%)",
             }}

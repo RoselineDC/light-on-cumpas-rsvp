@@ -60,8 +60,8 @@ export function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex items-start justify-center overflow-y-auto p-4 sm:p-8">
+      <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full p-6 my-auto">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-2xl font-bold"

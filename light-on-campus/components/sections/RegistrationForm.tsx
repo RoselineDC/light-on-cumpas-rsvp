@@ -62,7 +62,7 @@ export function RegistrationForm({ onSubmit, isLoading, error }: RegistrationFor
   const labelBase = 'flex items-center gap-1.5 text-xs font-medium tracking-wide text-gray-500 uppercase';
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="bg-gray-50 py-10 px-4">
       <div className="w-full max-w-lg bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
 
         {/* Header */}
